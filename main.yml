@@ -1,0 +1,31 @@
+
+
+
+# Setup front-end load balancer
+
+- name: setup load-balancer
+  hosts: frontends
+  become: yes
+  roles:
+    - name: common
+    - name: lb-tier
+
+
+# Setup application servers
+
+- name: setup app
+  hosts: apps
+  become: yes
+  gather_facts: false
+  roles:
+    - name: common
+    - name: app-tier
+
+# Setup database tier
+
+- name: setup database
+  become: yes
+  hosts: appdbs
+  roles:
+    - name: common
+    - name: db-tier
