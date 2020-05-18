@@ -17,8 +17,10 @@
  # only run the next 2 tasks once!
 - name: initilize postgres
   command: postgresql-setup initdb
+  ignore_errors: yes
 - name: initilize postgres some more
   command: chkconfig postgresql on
+  ignore_errors: yes
 - name: start postgres
   service:
      name: postgresql.service
