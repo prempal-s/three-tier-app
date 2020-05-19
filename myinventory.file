@@ -6,7 +6,7 @@ app1 ansible_host=app1.bff7.internal
 app2 ansible_host=app2.bff7.internal
 
 [appdbs]
-appdb1 ansible_host=appdb1.b77f.internal
+appdb1 ansible_host=appdb1.bff7.internal
 
 [support]
 support1 ansible_host=support1.bff7.internal
